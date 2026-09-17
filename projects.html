@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>المشاريع | رِواق</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* =========================================
+   RIWAQ — PROJECTS PAGE
+   ========================================= */
+
+/* HEADER — SAME AS SERVICES / ABOUT / CONTACT */
+
+body > header{
+  position:fixed !important;
+  top:0 !important;
+  left:0 !important;
+  right:0 !important;
+  width:100% !important;
+  height:86px !important;
+  z-index:999999999 !important;
+  margin:0 !important;
+  padding:0 !important;
+  background:#3b1728 !important;
+  border-bottom:1px solid rgba(255,255,255,.07) !important;
+  box-shadow:none !important;
+  backdrop-filter:none !important;
+  -webkit-backdrop-filter:none !important;
+  transform:none !important;
+}
+
+body > header .nav{
+  width:min(1200px,90%);
+  height:86px !important;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+body > header .logo{
+  color:#fff !important;
+}
+
+body > header .logo small{
+  color:rgba(255,255,255,.58) !important;
+}
+
+body > header .links{
+  display:flex;
+  align-items:center;
+  gap:34px;
+}
+
+body > header .links a{
+  color:#fff !important;
+  text-decoration:none;
+  font-family:"Tajawal",Arial,sans-serif !important;
+  font-size:13px !important;
+  font-weight:500 !important;
+  opacity:.92;
+  transition:.2s;
+}
+
+body > header .links a:hover{
+  color:#dfbd79 !important;
+}
+
+body > header .btn{
+  color:#fff !important;
+  background:transparent !important;
+  border:1px solid rgba(255,255,255,.30) !important;
+  border-radius:40px !important;
+  padding:11px 24px !important;
+  text-decoration:none;
+  font-family:"Tajawal",Arial,sans-serif !important;
+  font-size:11px !important;
+  font-weight:700 !important;
+}
+
+/* PAGE HERO */
+
+.page-hero{
+  position:relative;
+  padding:185px 0 105px !important;
+  overflow:hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(143,73,103,.20),
+      transparent 28%
+    ),
+    linear-gradient(
+      120deg,
+      #3b1728,
+      #54243f
+    ) !important;
+}
+
+.page-hero:before{
+  content:"";
+  position:absolute;
+  width:520px;
+  height:520px;
+  border:1px solid rgba(201,161,90,.30);
+  border-radius:50%;
+  left:-305px;
+  top:8px;
+  pointer-events:none;
+  box-shadow:
+    0 0 0 55px rgba(143,73,103,.045),
+    0 0 0 110px rgba(143,73,103,.022);
+}
+
+.page-hero:after{
+  content:"";
+  position:absolute;
+  width:500px;
+  height:500px;
+  border:1px solid rgba(143,73,103,.20);
+  border-radius:50%;
+  right:-315px;
+  bottom:-390px;
+  pointer-events:none;
+}
+
+.page-hero .w{
+  position:relative;
+  z-index:2;
+}
+
+.page-hero .ey{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:#dfbd79;
+  font-size:11px;
+  font-weight:700;
+}
+
+.page-hero .ey:before{
+  content:"";
+  width:28px;
+  height:1px;
+  background:#c9a15a;
+}
+
+.page-hero h1{
+  font-size:clamp(42px,5vw,62px) !important;
+  line-height:1.2;
+  margin:14px 0 18px !important;
+  letter-spacing:-1px;
+  color:#fff !important;
+}
+
+.page-hero p{
+  max-width:620px !important;
+  color:rgba(255,255,255,.62) !important;
+  line-height:2.1 !important;
+  font-size:13px !important;
+}
+
+/* PROJECT SECTION */
+
+.projects-section{
+  background:var(--cream);
+  padding:105px 0 !important;
+}
+
+.projects-section .cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.projects-section .card{
+  display:block;
+  position:relative;
+  background:#fff;
+  border:1px solid rgba(59,23,40,.08);
+  overflow:hidden;
+  transition:
+    transform .45s ease,
+    box-shadow .45s ease,
+    border-color .45s ease;
+}
+
+.projects-section .card:hover{
+  transform:translateY(-9px);
+  box-shadow:0 25px 55px rgba(59,23,40,.14);
+  border-color:rgba(201,161,90,.35);
+}
+
+.projects-section .pic{
+  height:285px !important;
+  position:relative;
+  overflow:hidden;
+  background:#ead8df;
+}
+
+.projects-section .pic:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,transparent 45%,rgba(40,16,27,.28));
+  opacity:.55;
+  transition:.4s;
+  pointer-events:none;
+}
+
+.projects-section .card:hover .pic:after{
+  opacity:.8;
+}
+
+.projects-section .pic img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  transition:transform .8s cubic-bezier(.2,.7,.2,1);
+}
+
+.projects-section .card:hover .pic img{
+  transform:scale(1.055);
+}
+
+.projects-section .body{
+  padding:25px 24px 27px !important;
+  position:relative;
+}
+
+.projects-section .body:before{
+  content:"";
+  display:block;
+  width:34px;
+  height:1px;
+  background:var(--gold);
+  margin-bottom:18px;
+}
+
+.projects-section .body h3{
+  margin:0 0 7px !important;
+  font-size:18px !important;
+  font-weight:800;
+  color:var(--g);
+}
+
+.projects-section .body p{
+  margin:0 !important;
+  color:var(--muted);
+  font-size:11px !important;
+  line-height:1.8;
+}
+
+.projects-section .tag{
+  display:inline-flex !important;
+  align-items:center;
+  gap:7px;
+  margin-top:18px !important;
+  padding:7px 10px !important;
+  background:#f8f2f4 !important;
+  color:var(--g) !important;
+  border-right:1px solid var(--gold);
+  font-size:9px !important;
+}
+
+.projects-section .tag:before{
+  content:"";
+  width:5px;
+  height:5px;
+  background:var(--gold);
+  border-radius:50%;
+}
+
+.projects-section .card[href] .body:after{
+  content:"↗";
+  position:absolute;
+  left:24px;
+  bottom:27px;
+  width:32px;
+  height:32px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(59,23,40,.20);
+  border-radius:50%;
+  color:var(--g);
+  font-size:14px;
+  transition:.35s;
+}
+
+.projects-section .card[href]:hover .body:after{
+  background:var(--g);
+  color:#fff;
+  border-color:var(--g);
+  transform:translate(-2px,-2px);
+}
+
+/* FOOTER CREDIT */
+
+.copy .mhamh-credit{
+  color:#dfbd79;
+  font-weight:700;
+  text-decoration:none;
+  transition:.25s;
+}
+
+.copy .mhamh-credit:hover{
+  color:#fff;
+  text-decoration:underline;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+  body > header,
+  body > header .nav{
+    height:70px !important;
+  }
+
+  body > header .nav{
+    width:92%;
+  }
+
+  body > header .links{
+    gap:15px;
+  }
+
+  body > header .links a{
+    font-size:10px !important;
+  }
+
+  body > header .btn{
+    padding:8px 13px !important;
+    font-size:9px !important;
+  }
+
+  .page-hero{
+    padding:145px 0 75px !important;
+  }
+
+  .page-hero h1{
+    font-size:40px !important;
+  }
+
+  .page-hero p{
+    font-size:12px !important;
+  }
+
+  .projects-section{
+    padding:75px 0 !important;
+  }
+
+  .projects-section .cards{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+  .projects-section .pic{
+    height:250px !important;
+  }
+
+  .projects-section .body{
+    padding:22px !important;
+  }
+
+  .projects-section .card[href] .body:after{
+    left:22px;
+    bottom:22px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="w nav">
+
+<div class="logo">
+رِواق
+<small>REAL ESTATE DEVELOPMENT</small>
+</div>
+
+<nav class="links">
+ <a href="index.html">الرئيسية</a>    
+<a href="projects.html">المشاريع</a>
+<a href="about.html">عن رِواق</a>
+<a href="services.html">خدماتنا</a>
+<a href="contact.html">تواصل معنا</a>
+</nav>
+
+<a class="btn" href="contact.html">ابدأ مشروعك</a>
+
+</div>
+
+</header>
+
+<section class="page-hero">
+
+<div class="w">
+
+<div class="ey">مشاريع رِواق</div>
+
+<h1>مشاريع تصنع فرقًا.</h1>
+
+<p>
+مجموعة من النماذج المفاهيمية التي تعكس أسلوب رِواق
+في تطوير الوجهات السكنية والتجارية.
+</p>
+
+</div>
+
+</section>
+
+<section class="projects-section">
+
+<div class="w">
+
+<div class="cards">
+
+<a class="card" href="project-riwaq.html">
+
+<div class="pic">
+<img src="project-1.png" alt="رِواق السكني">
+</div>
+
+<div class="body">
+<h3>رِواق السكني</h3>
+<p>مجتمع سكني معاصر — شمال الرياض</p>
+<span class="tag">سكني</span>
+</div>
+
+</a>
+
+<div class="card">
+
+<div class="pic">
+<img src="project-2.png" alt="أفق الأعمال">
+</div>
+
+<div class="body">
+<h3>أفق الأعمال</h3>
+<p>مساحات أعمال — حي الصحافة</p>
+<span class="tag">تجاري</span>
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="pic">
+<img src="project-3.png" alt="وادي رِواق">
+</div>
+
+<div class="body">
+<h3>وادي رِواق</h3>
+<p>وجهة متعددة الاستخدامات</p>
+<span class="tag">متعدد الاستخدام</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="w foot">
+
+<div>
+
+<div class="logo">رِواق</div>
+
+<p>
+تطوير عقاري بمعايير معاصرة.<br>
+تصميم تجريبي لأغراض العرض.
+</p>
+
+</div>
+
+<div class="flinks">
+<a href="index.html">الرئيسية</a> 
+<a href="projects.html">المشاريع</a>
+<a href="about.html">عن رِواق</a>
+<a href="services.html">خدماتنا</a>
+<a href="contact.html">تواصل</a>
+</div>
+
+</div>
+
+<div class="w copy">
+
+Concept Design • تصميم تجريبي — تصميم وتطوير بواسطة
+
+<a class="mhamh-credit"
+href="https://mhamh-digital.netlify.app/"
+target="_blank"
+rel="noopener noreferrer">
+مهمّة | خدمات رقمية
+</a>
+
+</div>
+
+</footer>
+
+</body>
+</html>

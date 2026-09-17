@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>عن رِواق | تطوير عقاري</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* =========================================
+   RIWAQ — ABOUT PAGE
+   ========================================= */
+
+/* HEADER — SAME AS SERVICES / CONTACT */
+
+body > header{
+  position:fixed !important;
+  top:0 !important;
+  left:0 !important;
+  right:0 !important;
+  width:100% !important;
+  height:86px !important;
+  z-index:999999 !important;
+  margin:0 !important;
+  padding:0 !important;
+  background:#3b1728 !important;
+  border-bottom:1px solid rgba(255,255,255,.07) !important;
+  box-shadow:none !important;
+  backdrop-filter:none !important;
+  -webkit-backdrop-filter:none !important;
+  transform:none !important;
+}
+
+body > header .nav{
+  width:min(1200px,90%);
+  height:86px !important;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+body > header .logo{
+  color:#fff !important;
+}
+
+body > header .logo small{
+  color:rgba(255,255,255,.58) !important;
+}
+
+body > header .links{
+  display:flex;
+  align-items:center;
+  gap:34px;
+}
+
+body > header .links a{
+  color:#fff !important;
+  text-decoration:none;
+  font-family:"Tajawal",Arial,sans-serif !important;
+  font-size:13px !important;
+  font-weight:500 !important;
+  opacity:.92;
+  transition:.2s;
+}
+
+body > header .links a:hover{
+  color:#dfbd79 !important;
+}
+
+body > header .btn{
+  color:#fff !important;
+  background:transparent !important;
+  border:1px solid rgba(255,255,255,.30) !important;
+  border-radius:40px !important;
+  padding:11px 24px !important;
+  text-decoration:none;
+  font-family:"Tajawal",Arial,sans-serif !important;
+  font-size:11px !important;
+  font-weight:700 !important;
+}
+
+/* =========================================
+   PAGE HERO
+   ========================================= */
+
+.page-hero{
+  position:relative;
+  padding:172px 0 105px !important;
+  overflow:hidden;
+
+  background:
+    radial-gradient(
+      circle at 78% 48%,
+      rgba(105,39,69,.30),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 8% 40%,
+      rgba(201,161,90,.07),
+      transparent 27%
+    ),
+    #3b1728 !important;
+
+  color:#fff;
+}
+
+.page-hero:before{
+  content:"";
+  position:absolute;
+  width:520px;
+  height:520px;
+  border:1px solid rgba(201,161,90,.30);
+  border-radius:50%;
+  left:-305px;
+  top:8px;
+  pointer-events:none;
+  box-shadow:
+    0 0 0 55px rgba(143,73,103,.045),
+    0 0 0 110px rgba(143,73,103,.022);
+}
+
+.page-hero:after{
+  content:"";
+  position:absolute;
+  width:500px;
+  height:500px;
+  border:1px solid rgba(143,73,103,.20);
+  border-radius:50%;
+  right:-315px;
+  bottom:-390px;
+  pointer-events:none;
+}
+
+.page-hero .w{
+  position:relative;
+  z-index:2;
+}
+
+.page-hero .ey{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:#dfbd79;
+  font-size:11px;
+  font-weight:700;
+}
+
+.page-hero .ey:before{
+  content:"";
+  width:32px;
+  height:1px;
+  background:#c9a15a;
+}
+
+.page-hero h1{
+  font-size:clamp(42px,5vw,62px) !important;
+  line-height:1.2;
+  margin:14px 0 18px !important;
+  letter-spacing:-1px;
+  color:#fff !important;
+}
+
+.page-hero p{
+  max-width:650px !important;
+  color:rgba(255,255,255,.64) !important;
+  line-height:2.1 !important;
+  font-size:13px !important;
+}
+
+/* =========================================
+   ABOUT SECTION
+   ========================================= */
+
+.about-section{
+  padding:110px 0 !important;
+  background:var(--cream);
+}
+
+.about{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:75px;
+  align-items:start;
+}
+
+.about-main{
+  padding-top:8px;
+}
+
+.about-main .ey{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:var(--gold);
+  font-size:11px;
+  font-weight:700;
+  margin-bottom:14px;
+}
+
+.about-main .ey:before{
+  content:"";
+  width:30px;
+  height:1px;
+  background:var(--gold);
+}
+
+.about h2{
+  font-size:clamp(34px,4vw,48px) !important;
+  line-height:1.3;
+  margin:0 0 20px !important;
+  letter-spacing:-.7px;
+}
+
+.about-main p{
+  max-width:560px;
+  color:var(--muted);
+  line-height:2.2;
+  font-size:13px;
+  margin:0;
+}
+
+/* =========================================
+   VALUES LIST
+   ========================================= */
+
+.list{
+  display:flex;
+  flex-direction:column;
+  gap:0 !important;
+  border-top:1px solid rgba(59,23,40,.12);
+  border-bottom:1px solid rgba(59,23,40,.12);
+}
+
+.list div{
+  min-height:68px;
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding:0 !important;
+  background:transparent !important;
+  border:0 !important;
+  border-bottom:1px solid rgba(59,23,40,.08);
+  color:var(--g);
+  font-size:12px;
+  transition:.3s;
+  position:relative;
+}
+
+.list div:last-child{
+  border-bottom:0;
+}
+
+.list div:before{
+  content:"";
+  width:5px;
+  height:5px;
+  flex:0 0 5px;
+  background:var(--gold);
+  border-radius:50%;
+}
+
+.list div:hover{
+  transform:translateX(-5px);
+  color:var(--pink);
+}
+
+/* =========================================
+   STATS
+   ========================================= */
+
+.stats{
+  position:relative;
+  overflow:hidden;
+  background:var(--g) !important;
+  color:#fff;
+}
+
+.stats:after{
+  content:"";
+  position:absolute;
+  width:420px;
+  height:420px;
+  border:1px solid rgba(255,255,255,.05);
+  border-radius:50%;
+  right:-220px;
+  top:-270px;
+  pointer-events:none;
+}
+
+.statsgrid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  text-align:center;
+}
+
+.stat{
+  padding:18px;
+  border-left:1px solid rgba(255,255,255,.07);
+}
+
+.stat:last-child{
+  border-left:0;
+}
+
+.stat strong{
+  display:block;
+  color:#dfbd79;
+  font-size:34px;
+  font-weight:800;
+  margin-bottom:7px;
+}
+
+.stat span{
+  font-size:10px;
+  color:rgba(255,255,255,.62);
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.copy .mhamh-credit{
+  color:#dfbd79;
+  font-weight:700;
+  text-decoration:none;
+  transition:.25s;
+}
+
+.copy .mhamh-credit:hover{
+  color:#fff;
+  text-decoration:underline;
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media(max-width:800px){
+
+  body > header,
+  body > header .nav{
+    height:70px !important;
+  }
+
+  body > header .nav{
+    width:92%;
+  }
+
+  body > header .links{
+    gap:15px;
+  }
+
+  body > header .links a{
+    font-size:10px !important;
+  }
+
+  body > header .btn{
+    padding:8px 13px !important;
+    font-size:9px !important;
+  }
+
+  .page-hero{
+    padding:145px 0 75px !important;
+  }
+
+  .page-hero h1{
+    font-size:40px !important;
+  }
+
+  .page-hero p{
+    font-size:12px !important;
+  }
+
+  .about-section{
+    padding:75px 0 !important;
+  }
+
+  .about{
+    grid-template-columns:1fr;
+    gap:45px;
+  }
+
+  .about h2{
+    font-size:36px !important;
+  }
+
+  .about-main p{
+    font-size:12px;
+  }
+
+  .list div{
+    min-height:64px;
+    font-size:11px;
+  }
+
+  .statsgrid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .stat{
+    min-height:105px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    border-left:1px solid rgba(255,255,255,.07);
+    border-bottom:1px solid rgba(255,255,255,.07);
+  }
+
+  .stat:nth-child(2){
+    border-left:0;
+  }
+
+  .stat:nth-child(3){
+    border-bottom:0;
+  }
+
+  .stat:nth-child(4){
+    border-left:0;
+    border-bottom:0;
+  }
+}
+
+
+/* ===== ABOUT HERO DECORATIVE DETAILS ===== */
+.page-hero .ey{
+  color:#dfbd79 !important;
+}
+
+.page-hero .ey:before{
+  background:#c9a15a !important;
+}
+
+@media(min-width:801px){
+  .page-hero h1{
+    white-space:nowrap;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="w nav">
+
+<div class="logo">
+رِواق
+<small>REAL ESTATE DEVELOPMENT</small>
+</div>
+
+<nav class="links">
+ <a href="index.html">الرئيسية</a>    
+<a href="projects.html">المشاريع</a>
+<a href="about.html">عن رِواق</a>
+<a href="services.html">خدماتنا</a>
+<a href="contact.html">تواصل معنا</a>
+</nav>
+
+<a class="btn" href="contact.html">ابدأ مشروعك</a>
+
+</div>
+
+</header>
+
+<section class="page-hero">
+
+<div class="w">
+
+<div class="ey">عن رِواق</div>
+
+<h1>العقار أكثر من مبنى.</h1>
+
+<p>
+نصمم وجهات تعكس احتياجات الناس وتواكب تطور المدن،
+مع التركيز على الجودة والتجربة والقيمة طويلة المدى.
+</p>
+
+</div>
+
+</section>
+
+<section class="about-section">
+
+<div class="w about">
+
+<div class="about-main">
+
+<div class="ey">رؤيتنا</div>
+
+<h2>نبني أماكن لها معنى.</h2>
+
+<p>
+رِواق مفهوم تجريبي لشركة تطوير عقاري سعودية،
+يقدّم تصورًا لعلامة تجمع بين التصميم المعاصر
+والتخطيط المدروس وصناعة قيمة مستدامة.
+</p>
+
+</div>
+
+<div class="list">
+
+<div>01 — دراسة وتطوير الفرص العقارية</div>
+<div>02 — التخطيط والتصميم وإدارة المشاريع</div>
+<div>03 — تطوير وجهات سكنية وتجارية</div>
+<div>04 — إدارة الأصول وتعظيم القيمة</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="w statsgrid">
+
+<div class="stat">
+<strong>12+</strong>
+<span>مشروعًا قيد التطوير</span>
+</div>
+
+<div class="stat">
+<strong>8</strong>
+<span>سنوات خبرة</span>
+</div>
+
+<div class="stat">
+<strong>24</strong>
+<span>شريكًا استراتيجيًا</span>
+</div>
+
+<div class="stat">
+<strong>3</strong>
+<span>مدن مستهدفة</span>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="w foot">
+
+<div>
+
+<div class="logo">رِواق</div>
+
+<p>
+تطوير عقاري بمعايير معاصرة.<br>
+تصميم تجريبي لأغراض العرض.
+</p>
+
+</div>
+
+<div class="flinks">
+<a href="index.html">الرئيسية</a> 
+<a href="projects.html">المشاريع</a>
+<a href="about.html">عن رِواق</a>
+<a href="services.html">خدماتنا</a>
+<a href="contact.html">تواصل</a>
+
+</div>
+
+</div>
+
+<div class="w copy">
+
+تصميم تجريبي — تصميم وتطوير بواسطة
+
+<a class="mhamh-credit"
+href="https://mhamh-digital.netlify.app/"
+target="_blank"
+rel="noopener noreferrer">
+مهمّة | خدمات رقمية
+</a>
+
+</div>
+
+</footer>
+
+</body>
+</html>

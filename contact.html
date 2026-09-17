@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>تواصل معنا | رِواق</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* =========================================================
+   RIWAQ — CONTACT PREMIUM PAGE
+   ========================================================= */
+
+:root{
+  --g:#351625;
+  --g2:#5d2942;
+  --pink:#8f4967;
+  --gold:#c9a15a;
+  --cream:#f7f0f2;
+  --white:#fff;
+  --muted:#7d6d74;
+  --line:rgba(53,22,37,.11);
+}
+
+/* ---------- fixed header ---------- */
+body > header{
+  position:fixed !important;
+  top:0 !important;
+  left:0 !important;
+  right:0 !important;
+  width:100% !important;
+  height:86px !important;
+  z-index:999999 !important;
+  background:rgba(53,22,37,.96) !important;
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  transform:none !important;
+}
+
+header .nav{
+  height:86px;
+}
+
+header .links a{
+  color:#fff !important;
+}
+
+header .btn{
+  border:1px solid rgba(255,255,255,.28) !important;
+}
+
+/* ---------- hero ---------- */
+.page-hero{
+  min-height:390px;
+  box-sizing:border-box;
+  padding-top:86px !important;
+  padding-bottom:80px !important;
+  display:flex;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 78% 48%, rgba(143,73,103,.30), transparent 35%),
+    radial-gradient(circle at 8% 35%, rgba(201,161,90,.12), transparent 28%),
+    linear-gradient(115deg,#321423 0%,#421a2d 48%,#351625 100%) !important;
+  color:#fff !important;
+}
+
+.page-hero:before{
+  content:"";
+  position:absolute;
+  width:410px;
+  height:410px;
+  border:1px solid rgba(201,161,90,.20);
+  border-radius:50%;
+  left:-220px;
+  top:10px;
+  box-shadow:
+    0 0 0 55px rgba(201,161,90,.025),
+    0 0 0 110px rgba(201,161,90,.018);
+}
+
+.page-hero:after{
+  content:"";
+  position:absolute;
+  width:520px;
+  height:520px;
+  border-radius:50%;
+  right:-270px;
+  bottom:-350px;
+  border:1px solid rgba(255,255,255,.07);
+}
+
+.page-hero .w{
+  position:relative;
+  z-index:2;
+  width:min(1200px,92%);
+}
+
+.page-hero .ey{
+  color:#dfbd79 !important;
+  font-size:12px;
+  font-weight:700;
+  margin-bottom:18px;
+}
+
+.page-hero h1{
+  color:#fff !important;
+  font-size:clamp(38px,5vw,62px);
+  line-height:1.35;
+  margin:0 0 14px;
+  letter-spacing:-1px;
+}
+
+.page-hero p{
+  color:rgba(255,255,255,.72) !important;
+  font-size:14px;
+  margin:0;
+}
+
+/* ---------- contact area ---------- */
+.contact-section{
+  background:var(--cream);
+  padding:85px 0 80px;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:24px;
+  align-items:stretch;
+}
+
+.contact-copy{
+  padding:25px 10px 25px 35px;
+}
+
+.contact-copy .ey{
+  color:var(--gold);
+  font-size:11px;
+  font-weight:800;
+  margin-bottom:13px;
+}
+
+.contact-copy h2{
+  color:var(--g);
+  font-size:clamp(27px,3.5vw,40px);
+  line-height:1.5;
+  margin:0 0 15px;
+}
+
+.contact-copy > p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:2.1;
+  margin:0 0 32px;
+  max-width:520px;
+}
+
+.contact-info{
+  display:grid;
+  gap:12px;
+}
+
+.info-item{
+  background:rgba(255,255,255,.76);
+  border:1px solid var(--line);
+  padding:18px 20px;
+  display:flex;
+  align-items:center;
+  gap:15px;
+  box-shadow:0 8px 25px rgba(53,22,37,.035);
+}
+
+.info-icon{
+  width:42px;
+  height:42px;
+  flex:0 0 42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:12px;
+  background:var(--g);
+  color:var(--gold);
+  font-size:16px;
+}
+
+.info-text{
+  min-width:0;
+}
+
+.info-text small{
+  display:block;
+  color:var(--gold);
+  font-size:10px;
+  font-weight:800;
+  margin-bottom:5px;
+}
+
+.info-text span{
+  color:var(--g);
+  font-size:12px;
+  line-height:1.8;
+}
+
+/* ---------- contact card ---------- */
+.contact-card{
+  background:#fff;
+  border:1px solid var(--line);
+  padding:34px;
+  box-shadow:0 20px 55px rgba(53,22,37,.075);
+  position:relative;
+  overflow:hidden;
+}
+
+.contact-card:before{
+  content:"";
+  position:absolute;
+  width:260px;
+  height:260px;
+  border:1px solid rgba(201,161,90,.14);
+  border-radius:50%;
+  right:-150px;
+  top:-145px;
+}
+
+.contact-card .ey{
+  color:var(--gold);
+  font-size:11px;
+  font-weight:800;
+  margin-bottom:9px;
+  position:relative;
+}
+
+.contact-card h3{
+  color:var(--g);
+  font-size:23px;
+  margin:0 0 8px;
+  position:relative;
+}
+
+.contact-card > p{
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.9;
+  margin:0 0 25px;
+  position:relative;
+}
+
+.contact-actions{
+  display:grid;
+  gap:11px;
+  position:relative;
+}
+
+.contact-action{
+  min-height:56px;
+  box-sizing:border-box;
+  padding:12px 16px;
+  border:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  text-decoration:none;
+  transition:.25s;
+}
+
+.contact-action:hover{
+  border-color:rgba(201,161,90,.5);
+  transform:translateX(-4px);
+  box-shadow:0 10px 25px rgba(53,22,37,.06);
+}
+
+.action-main{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.action-symbol{
+  width:35px;
+  height:35px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:10px;
+  background:var(--cream);
+  color:var(--g);
+  font-size:14px;
+}
+
+.action-text strong{
+  display:block;
+  color:var(--g);
+  font-size:12px;
+  margin-bottom:2px;
+}
+
+.action-text span{
+  color:var(--muted);
+  font-size:10px;
+}
+
+.action-arrow{
+  color:var(--gold);
+  font-size:18px;
+}
+
+/* ---------- bottom CTA ---------- */
+.contact-cta{
+  width:min(1140px,92%);
+  min-height:165px;
+  margin:0 auto 78px;
+  border-radius:20px;
+  overflow:hidden;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+  padding:35px 55px;
+  box-sizing:border-box;
+  background:
+    linear-gradient(90deg,rgba(53,22,37,.95),rgba(53,22,37,.73)),
+    url("project-2.jpg") center/cover;
+  color:#fff;
+}
+
+.contact-cta:after{
+  content:"";
+  position:absolute;
+  width:340px;
+  height:340px;
+  border:1px solid rgba(201,161,90,.17);
+  border-radius:50%;
+  left:-190px;
+  top:-85px;
+}
+
+.cta-content{
+  position:relative;
+  z-index:2;
+}
+
+.cta-content .ey{
+  color:#dfbd79;
+  font-size:11px;
+  font-weight:700;
+  margin-bottom:8px;
+}
+
+.cta-content h2{
+  color:#fff;
+  font-size:26px;
+  margin:0 0 8px;
+}
+
+.cta-content p{
+  color:rgba(255,255,255,.65);
+  font-size:11px;
+  margin:0;
+}
+
+.cta-button{
+  position:relative;
+  z-index:2;
+  flex-shrink:0;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-width:145px;
+  padding:13px 20px;
+  border-radius:40px;
+  background:#f7e9d9;
+  color:var(--g);
+  text-decoration:none;
+  font-size:11px;
+  font-weight:800;
+  transition:.25s;
+}
+
+.cta-button span{
+  font-size:15px;
+}
+
+.cta-button:hover{
+  transform:translateY(-3px);
+  background:#fff;
+}
+
+/* ---------- footer credit ---------- */
+.copy .mhamh-credit{
+  color:var(--gold);
+  text-decoration:none;
+  font-weight:700;
+  position:relative;
+  z-index:10;
+  cursor:pointer;
+  pointer-events:auto;
+}
+
+.copy .mhamh-credit:hover{
+  color:#fff;
+  text-decoration:underline;
+}
+
+/* ---------- responsive ---------- */
+@media(max-width:850px){
+  body > header,
+  header .nav{
+    height:70px !important;
+  }
+
+  .page-hero{
+    min-height:350px;
+    padding-top:70px !important;
+    padding-bottom:65px !important;
+  }
+
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .contact-copy{
+    padding:0;
+  }
+
+  .contact-card{
+    padding:28px 24px;
+  }
+}
+
+@media(max-width:600px){
+  .page-hero h1{
+    font-size:37px;
+  }
+
+  .contact-section{
+    padding:62px 0 60px;
+  }
+
+  .contact-copy h2{
+    font-size:28px;
+  }
+
+  .contact-cta{
+    flex-direction:column;
+    align-items:flex-start;
+    padding:30px 24px;
+    margin-bottom:55px;
+  }
+
+  .cta-content h2{
+    font-size:22px;
+  }
+
+  .cta-button{
+    width:100%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="w nav">
+
+    <div class="logo">
+      رِواق
+      <small>REAL ESTATE DEVELOPMENT</small>
+    </div>
+
+    <nav class="links">
+    <a href="index.html">الرئيسية</a> 
+      <a href="projects.html">المشاريع</a>
+      <a href="about.html">عن رِواق</a>
+      <a href="services.html">خدماتنا</a>
+      <a href="contact.html">تواصل معنا</a>
+    </nav>
+
+    <a class="btn" href="contact.html">ابدأ مشروعك</a>
+
+  </div>
+</header>
+
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="w">
+    <div class="ey">تواصل معنا</div>
+    <h1>خلّنا نبني الفكرة معك.</h1>
+    <p>مساحة للحوار حول الفرص والمشاريع العقارية.</p>
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact-section">
+
+  <div class="w contact-grid">
+
+    <div class="contact-copy">
+
+      <div class="ey">ابدأ مشروعك</div>
+
+      <h2>لديك فكرة تستحق التطوير؟</h2>
+
+      <p>
+        نفتح مساحة للحوار حول الفرص والمشاريع العقارية،
+        ونستمع إلى فكرتك ومتطلباتها لنحدد الخطوات المناسبة للمرحلة القادمة.
+      </p>
+
+      <div class="contact-info">
+
+        <div class="info-item">
+          <div class="info-icon">✉</div>
+          <div class="info-text">
+            <small>البريد الإلكتروني</small>
+            <span>hello@example.com</span>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">⌖</div>
+          <div class="info-text">
+            <small>الموقع</small>
+            <span>الرياض، المملكة العربية السعودية</span>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">◷</div>
+          <div class="info-text">
+            <small>ساعات التواصل</small>
+            <span>الأحد إلى الخميس</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="contact-card">
+
+      <div class="ey">تواصل مباشر</div>
+
+      <h3>خلّنا نبدأ من هنا.</h3>
+
+      <p>
+        اختر وسيلة التواصل المناسبة لمناقشة مشروعك أو فرصتك العقارية.
+      </p>
+
+      <div class="contact-actions">
+
+        <a class="contact-action" href="mailto:hello@example.com">
+          <div class="action-main">
+            <div class="action-symbol">✉</div>
+            <div class="action-text">
+              <strong>إرسال بريد إلكتروني</strong>
+              <span>hello@example.com</span>
+            </div>
+          </div>
+          <div class="action-arrow">←</div>
+        </a>
+
+        <a class="contact-action" href="tel:+966500000000">
+          <div class="action-main">
+            <div class="action-symbol">☎</div>
+            <div class="action-text">
+              <strong>اتصل بنا</strong>
+              <span>+966 50 000 0000</span>
+            </div>
+          </div>
+          <div class="action-arrow">←</div>
+        </a>
+
+        <a class="contact-action" href="contact.html">
+          <div class="action-main">
+            <div class="action-symbol">↗</div>
+            <div class="action-text">
+              <strong>طلب بدء مشروع</strong>
+              <span>أرسل تفاصيل فكرتك</span>
+            </div>
+          </div>
+          <div class="action-arrow">←</div>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CTA -->
+<div class="contact-cta">
+
+  <div class="cta-content">
+    <div class="ey">لنبدأ معًا</div>
+    <h2>جاهزون لتحويل فكرتك إلى واقع؟</h2>
+    <p>تواصل معنا لمناقشة فرص التعاون.</p>
+  </div>
+
+  <a class="cta-button" href="mailto:hello@example.com">
+    ابدأ مشروعك
+    <span>←</span>
+  </a>
+
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+
+  <div class="w foot">
+
+    <div>
+      <div class="logo">رِواق</div>
+
+      <p>
+        تطوير عقاري بمعايير معاصرة.<br>
+        تصميم تجريبي لأغراض العرض.
+      </p>
+    </div>
+
+    <div class="flinks">
+        <a href="index.html">الرئيسية</a> 
+      <a href="projects.html">المشاريع</a>
+      <a href="about.html">عن رِواق</a>
+      <a href="services.html">خدماتنا</a>
+      <a href="contact.html">تواصل</a>
+    </div>
+
+  </div>
+
+  <div class="w copy">
+    تصميم تجريبي — تصميم وتطوير بواسطة
+    <a class="mhamh-credit"
+       href="https://mhamh-digital.netlify.app/"
+       target="_blank"
+       rel="noopener noreferrer">
+      مهمّة | خدمات رقمية
+    </a>
+  </div>
+
+</footer>
+
+</body>
+</html>
