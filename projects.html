@@ -260,43 +260,6 @@ body > header .btn{
   font-size:11px !important;
   line-height:1.8;
 }
-/* ===== PROJECT ARROW — REAL ELEMENT ===== */
-.projects-section .card .project-arrow{
-  position:absolute !important;
-  left:24px !important;
-  bottom:27px !important;
-  width:32px !important;
-  height:32px !important;
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  border:1px solid rgba(59,23,40,.20) !important;
-  border-radius:50% !important;
-  background:transparent !important;
-  box-sizing:border-box !important;
-  transition:.3s ease !important;
-}
-
-.projects-section .card .project-arrow::before{
-  content:"" !important;
-  width:8px !important;
-  height:8px !important;
-  border-top:1.5px solid var(--g) !important;
-  border-left:1.5px solid var(--g) !important;
-  transform:rotate(-45deg) !important;
-  display:block !important;
-}
-
-.projects-section .card:hover .project-arrow{
-  background:var(--g) !important;
-  border-color:var(--g) !important;
-  transform:translate(-2px,-2px) !important;
-}
-
-.projects-section .card:hover .project-arrow::before{
-  border-color:#fff !important;
-}
-
 
 .projects-section .tag{
   display:inline-flex !important;
@@ -319,27 +282,13 @@ body > header .btn{
 }
 
 .projects-section .card[href] .body:after{
-  content:"↗";
-  position:absolute;
-  left:24px;
-  bottom:27px;
-  width:32px;
-  height:32px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border:1px solid rgba(59,23,40,.20);
-  border-radius:50%;
-  color:var(--g);
-  font-size:14px;
-  transition:.35s;
+  content:none !important;
+  display:none !important;
 }
 
 .projects-section .card[href]:hover .body:after{
-  background:var(--g);
-  color:#fff;
-  border-color:var(--g);
-  transform:translate(-2px,-2px);
+  content:none !important;
+  display:none !important;
 }
 
 /* FOOTER CREDIT */
@@ -360,10 +309,18 @@ body > header .btn{
 
 @media(max-width:800px){
 
-  /* ===== MOBILE HEADER — SPACED & CONSISTENT ===== */
+  /* ===== MOBILE HEADER — MATCH ALL OTHER PAGES ===== */
   body > header{
+    position:fixed !important;
+    top:0 !important;
+    left:0 !important;
+    right:0 !important;
+    width:100% !important;
     height:104px !important;
+    z-index:999999999 !important;
     background:#3b1728 !important;
+    border-bottom:1px solid rgba(255,255,255,.07) !important;
+    box-shadow:none !important;
     backdrop-filter:none !important;
     -webkit-backdrop-filter:none !important;
   }
@@ -371,6 +328,7 @@ body > header .btn{
   body > header .nav{
     width:92% !important;
     height:104px !important;
+    margin:auto !important;
     padding:0 !important;
     display:grid !important;
     grid-template-columns:1fr auto !important;
@@ -384,13 +342,15 @@ body > header .btn{
     grid-row:1 !important;
     justify-self:end !important;
     width:auto !important;
+    margin:0 !important;
     font-size:22px !important;
     line-height:1 !important;
-    margin:0 !important;
+    color:#fff !important;
   }
 
   body > header .logo small{
     display:block !important;
+    color:rgba(255,255,255,.58) !important;
     font-size:7px !important;
     letter-spacing:1.7px !important;
     margin-top:3px !important;
@@ -404,6 +364,9 @@ body > header .btn{
     padding:8px 14px !important;
     border-radius:30px !important;
     font-size:9px !important;
+    color:#fff !important;
+    background:transparent !important;
+    border:1px solid rgba(255,255,255,.30) !important;
   }
 
   body > header .links{
@@ -416,6 +379,7 @@ body > header .btn{
     justify-content:space-between !important;
     gap:0 !important;
     padding:0 !important;
+    margin:0 !important;
     border-top:1px solid rgba(255,255,255,.08) !important;
     overflow:hidden !important;
   }
@@ -423,6 +387,7 @@ body > header .btn{
   body > header .links a{
     flex:0 0 auto !important;
     color:#fff !important;
+    font-family:"Tajawal",Arial,sans-serif !important;
     font-size:10px !important;
     font-weight:500 !important;
     line-height:1.3 !important;
@@ -430,11 +395,14 @@ body > header .btn{
     opacity:.92 !important;
     padding:7px 3px !important;
     margin:0 !important;
+    text-decoration:none !important;
   }
 
   body > header .links a:after{
     display:none !important;
   }
+
+  /* ===== MOBILE HERO ===== */
 
   /* ===== MOBILE HERO ===== */
   .page-hero{
@@ -468,18 +436,6 @@ body > header .btn{
 
   .projects-section .body{
     padding:21px 20px 25px !important;
-  }
-
-  .projects-section .card .project-arrow{
-    left:20px !important;
-    bottom:23px !important;
-    width:30px !important;
-    height:30px !important;
-  }
-
-  .projects-section .card .project-arrow::before{
-    width:7px !important;
-    height:7px !important;
   }
 
   .projects-section .body h3{
@@ -516,6 +472,70 @@ body > header .btn{
     line-height:1.9 !important;
   }
 }
+
+
+/* =========================================================
+   FINAL FIX — PROJECT ARROW + MOBILE HEADER
+   ========================================================= */
+
+/* Kill the old ↗ icon coming from any previous CSS */
+html body .projects-section .card[href] .body::after{
+  content:none !important;
+  display:none !important;
+}
+
+/* New clean project arrow */
+html body .projects-section .card[href] .project-arrow{
+  position:absolute !important;
+  left:24px !important;
+  bottom:27px !important;
+  width:32px !important;
+  height:32px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  box-sizing:border-box !important;
+  border:1px solid rgba(59,23,40,.22) !important;
+  border-radius:50% !important;
+  background:#fff !important;
+  z-index:20 !important;
+  transition:all .3s ease !important;
+}
+
+html body .projects-section .card[href] .project-arrow::before{
+  content:"" !important;
+  width:8px !important;
+  height:8px !important;
+  display:block !important;
+  border-top:1.5px solid var(--g) !important;
+  border-left:1.5px solid var(--g) !important;
+  transform:rotate(-45deg) !important;
+}
+
+html body .projects-section .card[href]:hover .project-arrow{
+  background:var(--g) !important;
+  border-color:var(--g) !important;
+  transform:translate(-2px,-2px) !important;
+}
+
+html body .projects-section .card[href]:hover .project-arrow::before{
+  border-color:#fff !important;
+}
+
+@media(max-width:800px){
+  html body .projects-section .card[href] .project-arrow{
+    left:20px !important;
+    bottom:23px !important;
+    width:30px !important;
+    height:30px !important;
+  }
+
+  html body .projects-section .card[href] .project-arrow::before{
+    width:7px !important;
+    height:7px !important;
+  }
+}
+
 </style>
 </head>
 
