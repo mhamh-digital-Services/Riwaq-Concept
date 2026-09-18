@@ -295,6 +295,46 @@ header .btn{
   font-size:14px;
 }
 
+/* ===== MODERN PHONE ICON ===== */
+
+.phone-icon{
+  position:relative;
+}
+
+.phone-icon span{
+  width:14px;
+  height:14px;
+  display:block;
+  position:relative;
+  border:2px solid var(--g);
+  border-top-color:transparent;
+  border-right-color:transparent;
+  border-radius:4px 3px 7px 7px;
+  transform:rotate(45deg);
+}
+
+.phone-icon span:before,
+.phone-icon span:after{
+  content:"";
+  position:absolute;
+  width:6px;
+  height:3px;
+  background:var(--g);
+  border-radius:3px;
+}
+
+.phone-icon span:before{
+  top:-3px;
+  left:-2px;
+  transform:rotate(-45deg);
+}
+
+.phone-icon span:after{
+  right:-2px;
+  bottom:-2px;
+  transform:rotate(-45deg);
+}
+
 .action-text strong{
   display:block;
   color:var(--g);
@@ -308,8 +348,17 @@ header .btn{
 }
 
 .action-arrow{
-  color:var(--gold);
-  font-size:18px;
+  width:10px;
+  height:10px;
+  border-top:1.5px solid var(--gold);
+  border-left:1.5px solid var(--gold);
+  transform:rotate(-45deg);
+  flex:0 0 auto;
+  transition:.3s ease;
+}
+
+.contact-action:hover .action-arrow{
+  transform:translateX(-4px) rotate(-45deg);
 }
 
 /* ---------- bottom CTA ---------- */
@@ -628,8 +677,9 @@ header .btn{
   }
 
   .action-arrow{
-    font-size:16px !important;
-    flex:0 0 auto !important;
+    width:9px !important;
+    height:9px !important;
+    flex:0 0 9px !important;
   }
 
   /* ===== BOTTOM CTA ===== */
@@ -808,18 +858,20 @@ header .btn{
               <span>hello@example.com</span>
             </div>
           </div>
-          <div class="action-arrow">←</div>
+          <div class="action-arrow"></div>
         </a>
 
         <a class="contact-action" href="tel:+966500000000">
           <div class="action-main">
-            <div class="action-symbol">☎</div>
+            <div class="action-symbol phone-icon">
+              <span></span>
+            </div>
             <div class="action-text">
               <strong>اتصل بنا</strong>
               <span>+966 50 000 0000</span>
             </div>
           </div>
-          <div class="action-arrow">←</div>
+          <div class="action-arrow"></div>
         </a>
 
         <a class="contact-action" href="contact.html">
@@ -830,7 +882,7 @@ header .btn{
               <span>أرسل تفاصيل فكرتك</span>
             </div>
           </div>
-          <div class="action-arrow">←</div>
+          <div class="action-arrow"></div>
         </a>
 
       </div>
