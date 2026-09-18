@@ -280,12 +280,6 @@ body > header .btn{
   background:var(--gold);
   border-radius:50%;
 }
-
-.projects-section .card[href] .body:after{
-  content:none !important;
-  display:none !important;
-}
-
 .projects-section .card[href]:hover .body:after{
   content:none !important;
   display:none !important;
@@ -445,14 +439,6 @@ body > header .btn{
   .projects-section .body p{
     font-size:11px !important;
   }
-
-  .projects-section .card[href] .body:after{
-    left:20px !important;
-    bottom:23px !important;
-    width:30px !important;
-    height:30px !important;
-  }
-
   /* ===== MOBILE FOOTER ===== */
   footer{
     padding:34px 0 18px !important;
@@ -473,68 +459,6 @@ body > header .btn{
   }
 }
 
-
-/* =========================================================
-   FINAL FIX — PROJECT ARROW + MOBILE HEADER
-   ========================================================= */
-
-/* Kill the old ↗ icon coming from any previous CSS */
-html body .projects-section .card[href] .body::after{
-  content:none !important;
-  display:none !important;
-}
-
-/* New clean project arrow */
-html body .projects-section .card[href] .project-arrow{
-  position:absolute !important;
-  left:24px !important;
-  bottom:27px !important;
-  width:32px !important;
-  height:32px !important;
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  box-sizing:border-box !important;
-  border:1px solid rgba(59,23,40,.22) !important;
-  border-radius:50% !important;
-  background:#fff !important;
-  z-index:20 !important;
-  transition:all .3s ease !important;
-}
-
-html body .projects-section .card[href] .project-arrow::before{
-  content:"" !important;
-  width:8px !important;
-  height:8px !important;
-  display:block !important;
-  border-top:1.5px solid var(--g) !important;
-  border-left:1.5px solid var(--g) !important;
-  transform:rotate(-45deg) !important;
-}
-
-html body .projects-section .card[href]:hover .project-arrow{
-  background:var(--g) !important;
-  border-color:var(--g) !important;
-  transform:translate(-2px,-2px) !important;
-}
-
-html body .projects-section .card[href]:hover .project-arrow::before{
-  border-color:#fff !important;
-}
-
-@media(max-width:800px){
-  html body .projects-section .card[href] .project-arrow{
-    left:20px !important;
-    bottom:23px !important;
-    width:30px !important;
-    height:30px !important;
-  }
-
-  html body .projects-section .card[href] .project-arrow::before{
-    width:7px !important;
-    height:7px !important;
-  }
-}
 
 
 /* =========================================================
@@ -644,19 +568,6 @@ html body .projects-section .card[href]:hover .project-arrow::before{
   .projects-section .card::after,
   .projects-section .card .body::before,
   .projects-section .card .body::after,
-  .projects-section .card[href]::before,
-  .projects-section .card[href]::after,
-  .projects-section .card[href] .body::before,
-  .projects-section .card[href] .body::after,
-  .projects-section .card .arrow,
-  .projects-section .card .project-arrow{
-    content:none !important;
-    display:none !important;
-    background:none !important;
-    border:0 !important;
-    width:0 !important;
-    height:0 !important;
-  }
 }
 
 /* Same arrow removal on desktop */
@@ -664,14 +575,19 @@ html body .projects-section .card[href]:hover .project-arrow::before{
 .projects-section .card::after,
 .projects-section .card .body::before,
 .projects-section .card .body::after,
-.projects-section .card[href]::before,
-.projects-section .card[href]::after,
-.projects-section .card[href] .body::before,
-.projects-section .card[href] .body::after,
-.projects-section .card .arrow,
-.projects-section .card .project-arrow{
+
+/* ===== PROJECT CARDS: NO ARROW ICON ===== */
+.projects-section .card::before,
+.projects-section .card::after,
+.projects-section .card .body::before,
+.projects-section .card .body::after{
   content:none !important;
   display:none !important;
+}
+
+
+.projects-section .card[role="link"]{
+  cursor:pointer;
 }
 
 </style>
@@ -725,7 +641,7 @@ html body .projects-section .card[href]:hover .project-arrow::before{
 
 <div class="cards">
 
-<a class="card" href="project-riwaq.html">
+<div class="card" role="link" tabindex="0" onclick="window.location.href='project-riwaq.html'" onkeydown="if(event.key==='Enter'||event.key===' '){window.location.href='project-riwaq.html'}">
 
 <div class="pic">
 <img src="project-1.png" alt="رِواق السكني">
@@ -737,7 +653,7 @@ html body .projects-section .card[href]:hover .project-arrow::before{
 <span class="tag">سكني</span>
 </div>
 
-</a>
+</div>
 
 <div class="card">
 
