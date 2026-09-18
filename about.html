@@ -344,91 +344,7 @@ body > header .btn{
    MOBILE
    ========================================= */
 
-@media(max-width:800px){
 
-  body > header,
-  body > header .nav{
-    height:70px !important;
-  }
-
-  body > header .nav{
-    width:92%;
-  }
-
-  body > header .links{
-    gap:15px;
-  }
-
-  body > header .links a{
-    font-size:10px !important;
-  }
-
-  body > header .btn{
-    padding:8px 13px !important;
-    font-size:9px !important;
-  }
-
-  .page-hero{
-    padding:145px 0 75px !important;
-  }
-
-  .page-hero h1{
-    font-size:40px !important;
-  }
-
-  .page-hero p{
-    font-size:12px !important;
-  }
-
-  .about-section{
-    padding:75px 0 !important;
-  }
-
-  .about{
-    grid-template-columns:1fr;
-    gap:45px;
-  }
-
-  .about h2{
-    font-size:36px !important;
-  }
-
-  .about-main p{
-    font-size:12px;
-  }
-
-  .list div{
-    min-height:64px;
-    font-size:11px;
-  }
-
-  .statsgrid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .stat{
-    min-height:105px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    border-left:1px solid rgba(255,255,255,.07);
-    border-bottom:1px solid rgba(255,255,255,.07);
-  }
-
-  .stat:nth-child(2){
-    border-left:0;
-  }
-
-  .stat:nth-child(3){
-    border-bottom:0;
-  }
-
-  .stat:nth-child(4){
-    border-left:0;
-    border-bottom:0;
-  }
-}
 
 
 /* ===== ABOUT HERO DECORATIVE DETAILS ===== */
@@ -446,6 +362,216 @@ body > header .btn{
   }
 }
 
+
+/* =========================================
+   RIWAQ — ABOUT — FINAL MOBILE
+   ========================================= */
+
+@media(max-width:800px){
+
+  /* Header */
+  body > header{
+    height:104px !important;
+    background:#3b1728 !important;
+    backdrop-filter:none !important;
+    -webkit-backdrop-filter:none !important;
+  }
+
+  body > header .nav{
+    width:92% !important;
+    height:104px !important;
+    display:grid !important;
+    grid-template-columns:1fr auto !important;
+    grid-template-rows:55px 49px !important;
+    align-items:center !important;
+    gap:0 !important;
+  }
+
+  body > header .logo{
+    grid-column:2 !important;
+    grid-row:1 !important;
+    justify-self:end !important;
+    font-size:22px !important;
+    line-height:1 !important;
+    margin:0 !important;
+  }
+
+  body > header .logo small{
+    display:block !important;
+    font-size:7px !important;
+    letter-spacing:1.7px !important;
+    margin-top:3px !important;
+  }
+
+  body > header .btn{
+    grid-column:1 !important;
+    grid-row:1 !important;
+    justify-self:start !important;
+    min-height:34px !important;
+    padding:8px 14px !important;
+    border-radius:30px !important;
+    font-size:9px !important;
+  }
+
+  body > header .links{
+    grid-column:1 / 3 !important;
+    grid-row:2 !important;
+    width:100% !important;
+    height:49px !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    gap:7px !important;
+    padding:0 2px !important;
+    border-top:1px solid rgba(255,255,255,.08) !important;
+    overflow:hidden !important;
+  }
+
+  body > header .links a{
+    flex:0 0 auto !important;
+    color:#fff !important;
+    font-size:10px !important;
+    font-weight:500 !important;
+    line-height:1 !important;
+    white-space:nowrap !important;
+    opacity:.92 !important;
+    padding:5px 0 !important;
+  }
+
+  body > header .links a:after{
+    display:none !important;
+  }
+
+  /* Hero */
+  .page-hero{
+    padding:150px 0 70px !important;
+  }
+
+  .page-hero h1{
+    font-size:38px !important;
+    line-height:1.35 !important;
+    margin:12px 0 16px !important;
+  }
+
+  .page-hero p{
+    max-width:100% !important;
+    font-size:12px !important;
+    line-height:2 !important;
+  }
+
+  /* About */
+  .about-section{
+    padding:70px 0 !important;
+  }
+
+  .about{
+    grid-template-columns:1fr !important;
+    gap:36px !important;
+  }
+
+  .about-main{
+    padding-top:0 !important;
+  }
+
+  .about h2{
+    font-size:35px !important;
+    line-height:1.35 !important;
+  }
+
+  .about-main p{
+    font-size:12px !important;
+    line-height:2.1 !important;
+  }
+
+  .list{
+    width:100% !important;
+  }
+
+  .list div{
+    min-height:62px !important;
+    font-size:11px !important;
+    line-height:1.7 !important;
+    gap:11px !important;
+  }
+
+  /* Stats */
+  .statsgrid{
+    grid-template-columns:1fr 1fr !important;
+  }
+
+  .stat{
+    min-height:105px !important;
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    justify-content:center !important;
+    padding:15px 10px !important;
+    border-left:1px solid rgba(255,255,255,.07) !important;
+    border-bottom:1px solid rgba(255,255,255,.07) !important;
+  }
+
+  .stat:nth-child(2),
+  .stat:nth-child(4){
+    border-left:0 !important;
+  }
+
+  .stat:nth-child(3),
+  .stat:nth-child(4){
+    border-bottom:0 !important;
+  }
+
+  .stat strong{
+    font-size:30px !important;
+  }
+
+  .stat span{
+    font-size:9.5px !important;
+    text-align:center !important;
+  }
+
+  /* Footer */
+  footer{
+    padding:34px 0 18px !important;
+  }
+
+  .foot{
+    flex-direction:column !important;
+    gap:20px !important;
+  }
+
+  .flinks{
+    flex-wrap:wrap !important;
+    gap:13px 18px !important;
+  }
+
+  .copy{
+    line-height:1.9 !important;
+    text-align:center !important;
+  }
+}
+
+@media(max-width:380px){
+
+  body > header .links{
+    gap:5px !important;
+  }
+
+  body > header .links a{
+    font-size:9px !important;
+  }
+
+  .page-hero h1{
+    font-size:34px !important;
+  }
+
+  .about h2{
+    font-size:32px !important;
+  }
+
+  .list div{
+    font-size:10.5px !important;
+  }
+}
 </style>
 </head>
 

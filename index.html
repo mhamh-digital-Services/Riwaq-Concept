@@ -29,44 +29,90 @@ body{
 a{text-decoration:none;color:inherit}
 .w{width:min(1160px,92%);margin:auto}
 
-/* Header */
+/* ===== RIWAQ UNIFIED HEADER ===== */
 header{
   position:fixed !important;
   top:0 !important;
   right:0 !important;
   left:0 !important;
   width:100% !important;
-  height:92px !important;
+  height:86px !important;
   z-index:99999 !important;
   color:#fff;
-  background:rgba(40,16,27,.94);
-  backdrop-filter:blur(16px);
-  -webkit-backdrop-filter:blur(16px);
+  background:#3b1728 !important;
   border-bottom:1px solid rgba(255,255,255,.08);
+  box-shadow:none;
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
 }
-.nav{height:92px;display:flex;align-items:center;justify-content:space-between;}
+.nav{
+  width:min(1200px,92%);
+  height:86px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:relative;
+}
 .logo{font-size:25px;font-weight:800;letter-spacing:.2px}
 .logo small{display:block;font-size:8px;letter-spacing:2px;opacity:.65;margin-top:3px}
-.links{display:flex;gap:32px;font-size:12px;align-items:center}
-.links a{position:relative;transition:.3s;color:#fff9}
-.links a:after{content:"";position:absolute;right:0;bottom:-9px;width:0;height:1px;background:var(--gold);transition:.3s}
-.links a:hover{color:#fff}
-.links a:hover:after{width:100%}
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:12px;
-  min-height:46px;padding:0 20px;border:1px solid #ffffff42;border-radius:2px;
-  font-size:11px;letter-spacing:.2px;transition:.35s;position:relative;overflow:hidden;
+.links{
+  display:flex;
+  gap:30px;
+  font-size:13px;
+  align-items:center;
 }
-.btn:before{content:"↗";font-size:15px;color:var(--gold);transition:.35s}
-.btn:hover{background:#ffffff0d;border-color:#dfbd7966;transform:translateY(-2px)}
-
-/* Fixed header support */
-header .nav{
+.links a{
   position:relative;
-  z-index:2;
+  transition:.25s;
+  color:#fff !important;
+  font-weight:500;
 }
+.links a:after{
+  content:"";
+  position:absolute;
+  right:0;
+  bottom:-9px;
+  width:0;
+  height:1px;
+  background:var(--gold);
+  transition:.25s;
+}
+.links a:hover{color:#dfbd79 !important}
+.links a:hover:after{width:100%}
 
-.btn:hover:before{transform:translate(2px,-2px)}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:11px;
+  min-height:44px;
+  padding:0 22px;
+  border:1px solid rgba(255,255,255,.30);
+  border-radius:40px;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.2px;
+  transition:.3s;
+  position:relative;
+  overflow:hidden;
+}
+.btn:before{
+  content:"";
+  width:8px;
+  height:8px;
+  border-top:1.6px solid var(--gold);
+  border-right:1.6px solid var(--gold);
+  transform:rotate(45deg);
+  transition:.3s;
+}
+.btn:hover{
+  background:rgba(255,255,255,.06);
+  border-color:rgba(223,189,121,.55);
+  transform:translateY(-2px);
+}
+.btn:hover:before{transform:rotate(45deg) translate(2px,-2px)}
+
 /* Hero */
 .hero{
   min-height:720px;
@@ -249,8 +295,10 @@ section{padding:95px 0}
 .about-copy h2{font-size:clamp(34px,4vw,48px);line-height:1.25;margin:0 0 16px;letter-spacing:-1px}
 .about-copy p{color:var(--muted);line-height:2.15;font-size:13px;max-width:530px;margin:0 0 20px}
 .text-link{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:800;color:var(--g);padding-bottom:8px;border-bottom:1px solid #c9a15a88}
-.text-link span{width:25px;height:25px;border:1px solid var(--g);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:13px;transition:.3s}
-.text-link:hover span{background:var(--g);color:#fff;transform:translate(-2px,-2px)}
+.text-link span{width:25px;height:25px;border:1px solid var(--g);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:0;transition:.3s;position:relative}
+.text-link span:after{content:"";width:7px;height:7px;border-top:1.5px solid var(--g);border-right:1.5px solid var(--g);transform:rotate(45deg)}
+.text-link:hover span{background:var(--g);transform:translate(-2px,-2px)}
+.text-link:hover span:after{border-color:#fff}
 .about-values{display:grid;grid-template-columns:repeat(3,1fr);margin-top:38px;border-top:1px solid #3b17281c;padding-top:22px}
 .about-values div{padding:0 16px;border-left:1px solid #c9a15a88}
 .about-values div:first-child{padding-right:0}
@@ -264,9 +312,11 @@ section{padding:95px 0}
   border-right:1px solid var(--gold);font-size:11px;display:flex;align-items:center;
   justify-content:space-between;gap:18px;transition:.35s;position:relative;
 }
-.list div:after{content:"↗";width:30px;height:30px;border:1px solid #3b172830;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--g);font-size:14px;transition:.35s;flex:0 0 auto}
+.list div:after{content:"";width:30px;height:30px;border:1px solid #3b172830;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:.35s;flex:0 0 auto}
+.list div:before{content:"";position:absolute;left:27px;width:7px;height:7px;border-top:1.5px solid var(--g);border-right:1.5px solid var(--g);transform:rotate(45deg);pointer-events:none}
 .list div:hover{transform:translateX(-5px);box-shadow:0 16px 32px #3b172812;border-right-color:var(--gold)}
-.list div:hover:after{background:var(--g);color:#fff;border-color:var(--g);transform:translate(-2px,-2px)}
+.list div:hover:after{background:var(--g);border-color:var(--g);transform:translate(-2px,-2px)}
+.list div:hover:before{border-color:#fff;transform:rotate(45deg) translate(2px,-2px)}
 
 /* CTA */
 .cta{
@@ -285,7 +335,7 @@ section{padding:95px 0}
   min-height:48px;padding:0 24px;background:var(--gold);color:var(--g);
   border:1px solid var(--gold);border-radius:2px;font-size:11px;font-weight:800;transition:.35s;
 }
-.cta a:after{content:"↗";font-size:15px;transition:.35s}
+.cta a:after{content:"";width:8px;height:8px;border-top:1.6px solid var(--g);border-right:1.6px solid var(--g);transform:rotate(45deg);transition:.35s}
 .cta a:hover{background:#dfbd79;transform:translateY(-3px);box-shadow:0 14px 30px #12070d45}
 .cta a:hover:after{transform:translate(3px,-3px)}
 
@@ -319,37 +369,88 @@ footer{
   font-size:9px;
 }
 
-/* Mobile */
+/* ===== MOBILE — SAME HEADER ON ALL PAGES ===== */
 @media(max-width:800px){
   header{
-    height:70px !important;
-    background:rgba(40,16,27,.96);
-    backdrop-filter:blur(14px);
-    -webkit-backdrop-filter:blur(14px);
+    height:126px !important;
+    background:#3b1728 !important;
   }
-  header .nav{
-    height:70px;
+  .nav{
+    width:92%;
+    height:126px;
+    display:block;
+    position:relative;
   }
+  .logo{
+    position:absolute;
+    top:13px;
+    right:0;
+    font-size:24px;
+    line-height:1;
+  }
+  .logo small{
+    font-size:7px;
+    letter-spacing:1.8px;
+    margin-top:4px;
+  }
+  .btn{
+    position:absolute;
+    top:16px;
+    left:0;
+    min-height:42px;
+    padding:0 17px;
+    font-size:10px;
+    border-radius:4px;
+  }
+  .links{
+    position:absolute;
+    right:0;
+    left:0;
+    bottom:13px;
+    display:flex !important;
+    align-items:center;
+    justify-content:space-between;
+    gap:0;
+    width:100%;
+    padding:0 2px;
+    white-space:nowrap;
+  }
+  .links a{
+    font-size:10px !important;
+    font-weight:500 !important;
+    line-height:1.4;
+  }
+  .links a:after{bottom:-6px}
   .hero{
-    padding-top:90px;
+    padding-top:150px;
   }
-  .links{display:none}
-  .grid,.about{grid-template-columns:1fr;gap:30px}
+  .grid,.about{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
   .about-image{height:330px;order:1}
   .about-copy{order:2}
   .about .list{order:3}
   .about-values{grid-template-columns:1fr;gap:16px}
-  .about-values div{border-left:0;border-bottom:1px solid #c9a15a55;padding:0 0 14px}
+  .about-values div{
+    border-left:0;
+    border-bottom:1px solid #c9a15a55;
+    padding:0 0 14px;
+  }
   .about-values div:last-child{border-bottom:0}
   .actions{flex-wrap:wrap}
-
-  .hero{min-height:760px}
+  .hero{min-height:820px}
   .hero h1{font-size:44px}
   .visual{height:300px}
   .cards{grid-template-columns:1fr}
   .statsgrid{grid-template-columns:1fr 1fr}
   .stat{border-bottom:1px solid #fff1}
   .foot{flex-direction:column;gap:20px}
+}
+@media(max-width:380px){
+  .links a{font-size:9px !important}
+  .links{gap:5px}
+  .btn{padding:0 14px}
 }
 
 /* ===== Riwaq premium concept polish ===== */
@@ -677,3 +778,8 @@ footer{
 
 </body>
 </html>
+<style>
+/* ===== NO EMOJI ARROWS ===== */
+.btn,.text-link,.cta a,.list div{font-variant-emoji:text;}
+.scroll-note span{font-family:Arial,sans-serif !important;}
+</style>
