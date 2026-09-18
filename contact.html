@@ -335,6 +335,23 @@ header .btn{
   transform:rotate(-45deg);
 }
 
+/* ===== MODERN PROJECT ICON ===== */
+
+.project-icon{position:relative;}
+.project-icon span{
+  width:13px;height:13px;display:block;position:relative;
+  border:1.6px solid var(--g);border-radius:3px;box-sizing:border-box;
+}
+.project-icon span:after{
+  content:"";position:absolute;width:7px;height:7px;right:-3px;top:-3px;
+  border-top:1.6px solid var(--g);border-right:1.6px solid var(--g);
+  background:var(--cream);
+}
+.project-icon span:before{
+  content:"";position:absolute;width:7px;height:1.6px;right:-2px;top:2px;
+  background:var(--g);transform:rotate(-45deg);transform-origin:right center;z-index:2;
+}
+
 .action-text strong{
   display:block;
   color:var(--g);
@@ -876,7 +893,7 @@ header .btn{
 
         <a class="contact-action" href="contact.html">
           <div class="action-main">
-            <div class="action-symbol">↗</div>
+            <div class="action-symbol project-icon"><span></span></div>
             <div class="action-text">
               <strong>طلب بدء مشروع</strong>
               <span>أرسل تفاصيل فكرتك</span>
